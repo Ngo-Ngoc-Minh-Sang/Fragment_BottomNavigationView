@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btnRemoveA"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Remove A"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnAddFragment"
+        android:layout_marginTop="30dp"/>
+
+    <Button
+        android:id="@+id/btnAddFragment"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:text="ADD FRAGMENT"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="30dp"/>
+
+    <Button
+        android:id="@+id/btnRemoveB"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Remove B"
+        app:layout_constraintStart_toEndOf="@id/btnAddFragment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:id="@+id/txtFragment1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Fragment By XML"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnAddFragment"
+        android:layout_marginTop="20dp"
+        android:textSize="25dp"/>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment1"
+        android:name="com.demoadd_removefragment.Fragment1"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtFragment1"
+        android:layout_marginTop="10dp"
+        tools:layout="@layout/fragment_1" />
+
+    <TextView
+        android:id="@+id/txtFragment2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Fragment By Code Java"
+        app:layout_constraintTop_toBottomOf="@id/fragment1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="25dp"
+        android:layout_marginTop="35dp"/>
+
+    <FrameLayout
+        android:id="@+id/frameLayout_1"
+        android:layout_width="401dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtFragment2">
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="308dp"
+        app:layout_constraintTop_toBottomOf="@id/frameLayout_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="5dp">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DEMO POP BACKSTACK"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:onClick="addFragmentA"
+                android:id="@+id/btnAddA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="ADD A"
+                android:padding="5dp"/>
+
+            <Button
+                android:onClick="addFragmentB"
+                android:id="@+id/btnAddB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="ADD B"
+                android:padding="5dp"/>
+
+            <Button
+                android:onClick="addFragmentC"
+                android:id="@+id/btnAddC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="ADD C"
+                android:padding="5dp"/>
+
+            <Button
+                android:onClick="popFragmentA"
+                android:id="@+id/btnPopA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="POP A"
+                android:padding="5dp"/>
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/frameLayout_2"
+            android:layout_width="match_parent"
+            android:layout_height="80dp">
+
+        </FrameLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
